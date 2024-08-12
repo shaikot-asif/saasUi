@@ -1,0 +1,18 @@
+.div1 {
+  background-image: radial-gradient(at top left, #4f1d9e 30%, transparent 80%),
+    radial-gradient(at bottom, #2ab4d9 0%, transparent 60%),
+    radial-gradient(at bottom left, #2ab4d9 0%, transparent 50%),
+    radial-gradient(at top right, #1d979e, transparent),
+    radial-gradient(at bottom right, #4f1d9e 0%, transparent 50%);
+
+  background-blend-mode: saturation;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
