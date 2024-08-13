@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
-
+import { IoIosMenu } from "react-icons/io";
+import HumburgerMenu from "./HumburgetMenu";
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  console.log(mobileMenu, "menu");
 
   const handleScroll = () => {
     const offset = window.scrollY;
 
     if (offset >= 100) {
       setScrolled(true);
-      console.log(offset, "offser");
     } else {
       setScrolled(false);
     }
@@ -30,12 +33,12 @@ const NavBar = () => {
     <div
       className={`${
         scrolled
-          ? "fixed top-0 left-0 right-0 bg-[#1d2025] opacity-75 z-20 w-[100%] h-[60px] transition-all duration-200 backdrop-blur-sm"
-          : "bg-transparent"
+          ? "fixed top-0 left-0 right-0 bg-[#1d2025] opacity-75 z-20 w-[100%] h-[60px] transition-all duration-200 backdrop-blur-md"
+          : ""
       }`}
     >
       <div
-        className={`fixed top-0 left-0 right-0 container bg-transparent z-50  max-w-[1280px] font-inter mx-auto my-4 flex flex-raw flex-nowrap justify-between `}
+        className={` fixed top-0 left-0 right-0 w-[95%]  bg-transparent z-50  max-w-[1280px] font-inter mx-auto my-4 flex flex-raw flex-nowrap justify-between `}
       >
         <div className="bg-transparent w-[6.4rem]">
           <a href="#" className="w-[100%]">
@@ -59,8 +62,8 @@ const NavBar = () => {
             </svg>
           </a>
         </div>
-        <div className="flex gap-5 bg-transparent">
-          <ul className="flex gap-8 bg-transparent flex-nowrap">
+        <div className="flex gap-5 bg-transparent ">
+          <ul className="md:flex md:gap-8 md:bg-transparent md:flex-nowrap hidden">
             <li className="bg-transparent cursor-pointer text-dark-textDarkLight leading-8 font-medium text-[13px] hover:text-white transition-all duration-500">
               <a className="bg-transparent" href="#">
                 Features
@@ -83,20 +86,29 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <ul className="bg-transparent flex gap-x-3">
-            <li className="px-3 rounded-md bg-buttonColor hover:bg-hoverColor transition-all duration-500 cursor-pointer text-white leading-8 text-[13px] ">
+          <ul className="bg-transparent flex md:gap-x-4">
+            <li className="hidden md:inline-block px-3 rounded-md bg-[#8952e0] hover:bg-hoverColor transition-all duration-500 cursor-pointer text-white leading-8 text-[13px] ">
               <a href="#" className="bg-inherit">
                 Sign Up
               </a>
             </li>
-            <li className="bg-transparent flex justify-center mt-2">
-              <a className="bg-transparent" href="#">
-                {/* <CiDark className="text-xl size-4 text-white" /> */}
-                <CiLight className="bg-transparent text-xl size-5 text-white" />
+            <li className="bg-transparent flex justify-center text-center  transition-all duration-500 hover:bg-white hover:bg-opacity-10 h-[32px] w-[32px]">
+              <a className="bg-center text-center align-middle" href="#">
+                {/* <CiDark className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" /> */}
+                <CiLight className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" />
               </a>
+            </li>
+            <li
+              className="flex relative z-[60] justify-center text-center md:hidden cursor-pointer transition-all duration-500 hover:bg-white hover:bg-opacity-10 h-[32px] w-[32px]"
+              onClick={() => setMobileMenu(!mobileMenu)}
+            >
+              <IoIosMenu className="text-white mt-[7px]" />
             </li>
           </ul>
         </div>
+      </div>
+      <div className="transition-all duration-500">
+        {mobileMenu && <HumburgerMenu mobileMenu={mobileMenu} />}
       </div>
     </div>
   );
