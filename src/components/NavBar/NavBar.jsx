@@ -7,6 +7,7 @@ import HumburgerMenu from "./HumburgetMenu";
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [switchDark, setSwitchDark] = useState(false);
 
   console.log(mobileMenu, "menu");
 
@@ -30,15 +31,11 @@ const NavBar = () => {
     };
   }, []);
   return (
-    <div
-      className={`${
-        scrolled
-          ? "fixed top-0 left-0 right-0 bg-[#1d2025] opacity-75 z-20 w-[100%] h-[60px] transition-all duration-200 backdrop-blur-md"
-          : ""
-      }`}
-    >
+    <div>
       <div
-        className={` fixed top-0 left-0 right-0 w-[95%]  bg-transparent z-50  max-w-[1280px] font-inter mx-auto my-4 flex flex-raw flex-nowrap justify-between `}
+        className={`${
+          scrolled ? "bg-[#1d2025]  border-b" : " bg-transparent "
+        } fixed top-0 left-0 right-0 px-[32px] py-[16px] border-[#2D3032]  bg-opacity-75 backdrop-blur-sm  transition-all duration-200 z-50 font-inter mx-auto flex flex-raw flex-nowrap justify-between `}
       >
         <div className="bg-transparent w-[6.4rem]">
           <a href="#" className="w-[100%]">
@@ -92,10 +89,17 @@ const NavBar = () => {
                 Sign Up
               </a>
             </li>
-            <li className="bg-transparent flex justify-center text-center  transition-all duration-500 hover:bg-white hover:bg-opacity-10 h-[32px] w-[32px]">
-              <a className="bg-center text-center align-middle" href="#">
-                {/* <CiDark className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" /> */}
-                <CiLight className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" />
+            <li
+              onClick={() => setSwitchDark(!switchDark)}
+              className="cursor-pointer bg-transparent flex justify-center text-center  transition-all duration-500 hover:bg-white hover:bg-opacity-10 h-[32px] w-[32px]"
+            >
+              <a className="bg-center text-center align-middle " href="#">
+                {switchDark && (
+                  <CiDark className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" />
+                )}
+                {!switchDark && (
+                  <CiLight className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" />
+                )}
               </a>
             </li>
             <li
