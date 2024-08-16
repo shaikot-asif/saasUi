@@ -19,18 +19,16 @@ const tags = [
   "feature flags",
   "responsiveness",
 ];
-const FounderCard = () => {
+const FounderCard = ({ parentClass }) => {
   return (
-    <div>
-      <div>
-        <CoreComponents
-          arrOfTags={tags}
-          title={"Start your next idea two steps ahead"}
-          text={
-            "We took care of all your basic frontend needs, so you can start building functionality that makes your product unique."
-          }
-        />
-      </div>
+    <div className={`${parentClass}`}>
+      <CoreComponents
+        arrOfTags={tags}
+        title={"Start your next idea two steps ahead"}
+        text={
+          "We took care of all your basic frontend needs, so you can start building functionality that makes your product unique."
+        }
+      />
     </div>
   );
 };

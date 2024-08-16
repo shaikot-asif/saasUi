@@ -2,7 +2,7 @@ import React from "react";
 
 const ATCP = ({ icon, title, paragraph, classes, parentClasses, bTitle }) => {
   return (
-    <div className={`${parentClasses}`}>
+    <div className={`${parentClasses} `}>
       <div className="h-8 w-8 bg-purpleLight bg-opacity-20 relative rounded-full">
         <img
           className="w-4 h-4 m-auto absolute top-0 left-0 bottom-0 right-0"

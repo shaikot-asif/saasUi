@@ -89,19 +89,7 @@ const NavBar = () => {
                 Sign Up
               </a>
             </li>
-            <li
-              onClick={() => setSwitchDark(!switchDark)}
-              className="cursor-pointer bg-transparent flex justify-center text-center  transition-all duration-500 hover:bg-white hover:bg-opacity-10 h-[32px] w-[32px]"
-            >
-              <a className="bg-center text-center align-middle " href="#">
-                {switchDark && (
-                  <CiDark className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" />
-                )}
-                {!switchDark && (
-                  <CiLight className="bg-transparent flex text-center items-center mt-2 text-xl size-4 text-white" />
-                )}
-              </a>
-            </li>
+
             <li
               className="flex relative z-[60] justify-center text-center md:hidden cursor-pointer transition-all duration-500 hover:bg-white hover:bg-opacity-10 h-[32px] w-[32px]"
               onClick={() => setMobileMenu(!mobileMenu)}

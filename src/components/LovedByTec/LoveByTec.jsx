@@ -8,8 +8,8 @@ const LoveByTec = () => {
       <h2 className="font-inter leading-9 text-[30px] font-bold text-center text-white mb-14">
         Loved by tech people
       </h2>
-      <div className="container mx-auto px-[20px] justify-between flex gap-8 mb-[100px]">
-        <div className="w-[33%]">
+      <div className="container mx-auto px-[20px] lg:justify-between flex-col lg:flex-row flex gap-8 mb-[100px]">
+        <div className=" lg:w-[33%]">
           <LovePeopleCard
             avatar={images.ASIF}
             name={"Asif Ahmed"}
@@ -19,7 +19,7 @@ const LoveByTec = () => {
             }
           />
         </div>
-        <div className="w-[33%]">
+        <div className=" lg:w-[33%]">
           <LovePeopleCard
             avatar={images.ASIF}
             name={"Asif Ahmed"}
@@ -30,7 +30,7 @@ const LoveByTec = () => {
           />
         </div>
 
-        <div className="w-[33%]">
+        <div className=" lg:w-[33%]">
           <LovePeopleCard
             avatar={images.ASIF}
             name={"Shaikot Ahmed Asif"}

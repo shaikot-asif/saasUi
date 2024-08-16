@@ -6,25 +6,17 @@ import NextCard from "../startNext/startNextComponent/nextCard/NextCard";
 
 const CoreCardSection = () => {
   return (
-    <div className="w-[1260px] m-auto mb-[200px] flex flex-col gap-6">
-      <div className="flex flex-row justify-stretch gap-6">
-        <div className="w-auto">
-          <CoreCard />
-        </div>
-        <div>
-          <div className="w-[420px]">
-            <SolidCard />
-          </div>
-        </div>
+    <div className="container m-auto px-[20px] mb-[100px] sm:mb-[200px] flex flex-col gap-6">
+      <div className="flex flex-col lg:flex-row  gap-6">
+        <CoreCard parentClass={"lg:w-[65%]"} />
+
+        <SolidCard parentClass={" lg:w-[35%]"} />
       </div>
 
-      <div className="flex flex-row justify-stretch gap-6">
-        <div className="w-[420px] block">
-          <NextCard />
-        </div>
-        <div className="w-[815px]">
-          <FounderCard />
-        </div>
+      <div className="flex flex-col lg:flex-row justify-stretch gap-6">
+        <NextCard parentClasses={"lg:w-[35%]"} />
+
+        <FounderCard parentClass={"lg:w-[65%]"} />
       </div>
     </div>
   );

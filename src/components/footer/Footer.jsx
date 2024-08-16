@@ -32,7 +32,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-col gap-1 sm:flex-row justify-between">
         <div>
           <p className="text-[14px] leading-5 font-normal text-dark-textDarkLight">
             Build by{" "}
